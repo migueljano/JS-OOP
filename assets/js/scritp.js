@@ -1,7 +1,7 @@
 /* Essercizio 1 */
 
 class User {
-    constructor (_firsName, _lastName, _age, _location) {
+    constructor(_firsName, _lastName, _age, _location) {
         this.firsName = _firsName;
         this.lastName = _lastName;
         this.age = _age;
@@ -13,21 +13,21 @@ class User {
 
 }
 
-const userOne = new User ('Gatto', 'Grande', 20, 'Milano');
-const userTwo = new User ('Cane', 'Dalmata', 15, 'Discovery');
+const userOne = new User('Gatto', 'Grande', 20, 'Milano');
+const userTwo = new User('Cane', 'Dalmata', 15, 'Discovery');
 
 console.log(userTwo.printUser(userOne)); //invertendo i valori in consol cambia i risultati!
 
 /*Essercizio 2 */
 
 class Pet {
-    constructor (_petName, _ownerName, _species, _breed) {
+    constructor(_petName, _ownerName, _species, _breed) {
         this.petName = _petName;
         this.ownerName = _ownerName;
         this.species = _species;
         this.breed = _breed;
     }
-        
+
 }
 
 const petValue = document.getElementById('myList');
@@ -46,7 +46,15 @@ myList.addEventListener('submit', function (e) {
 
     const newPet = new Pet(petName.value, ownerName.value, species.value, breed.value);
     textPets.push(newPet.value)
-
+    const liText = `Pet Name: ${newPet.petName}, Owner Name: ${newPet.ownerName}, Species: ${newPet.species}, Breed: ${newPet.breed}`;
+    const li = document.createElement("li");
+    li.textContent = liText;
+    petList.appendChild(li);
+    petName.value = '';
+    ownerName.value = '';
+    species.value = '';
+    breed.value = '';
+    myList.value = '';
 
 })
 
